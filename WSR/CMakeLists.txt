@@ -5,16 +5,13 @@ project(WSR)
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-
 FetchContent_Declare(
     wsr
     SOURCE_DIR ../
 )
 FetchContent_MakeAvailable(wsr)
 
-add_executable (WSR "WSR.cpp" "WSR.hpp" "src/Renderer.cpp")
+add_executable (WSR "WSR.cpp" "WSR.hpp" "src/Renderer.cpp" "src/Window.cpp" "src/Geometry/Line.cpp")
 
 target_compile_options(WSR PUBLIC "")
 
