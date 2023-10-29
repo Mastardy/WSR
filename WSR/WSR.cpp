@@ -11,9 +11,12 @@ void FrameBufferSizeCallback(GLFWwindow* window, int width, int height)
 int main()
 {
     Window window(Width, Height);
-    Renderer softwareRenderer(960, 540);
+    Renderer softwareRenderer(720, 415);
 
     window.SetFramebufferSizeCallback(FrameBufferSizeCallback);
+       
+    Line line(Point(5, 5), Point(200, 200), Color(0, 0, 0, 0));
+    line.Render(softwareRenderer);
 
 	while (!window.ShouldClose())
 	{

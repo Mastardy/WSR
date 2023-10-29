@@ -10,9 +10,13 @@ public:
 	Renderer(int width, int height);
 	~Renderer();
 
-	void SetPixel(int x, int y, const Color& color);
+	void SetColor(const Color& color);
+	void SetPixel(int x, int y);
 
 	int width;
 	int height;
 	GLubyte* data;
+
+private:
+	Color currentColor;
 };

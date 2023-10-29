@@ -26,15 +26,19 @@ Renderer::~Renderer()
 	delete[] data;
 }
 
-void Renderer::SetPixel(int x, int y, const Color& color)
+void Renderer::SetColor(const Color& color)
+{
+	currentColor = color;
+}
+
+void Renderer::SetPixel(int x, int y)
 {
 	if (x < 0 || x >= width || y < 0 || y >= height) return;
-
+		
 	y = height - y;
 
 	int pixel = (y * width * 3) + (x * 3);
-	data[pixel] = color.r;
-	data[++pixel] = color.g;
-	data[++pixel] = color.b;
-	std::cout << "Written on: " << x << ", " << y << std::endl;
+	data[pixel] = currentColor.r;
+	data[++pixel] = currentColor.g;
+	data[++pixel] = currentColor.b;
 }
