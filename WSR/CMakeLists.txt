@@ -11,7 +11,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(wsr)
 
-add_executable (WSR "WSR.cpp" "WSR.hpp" "src/Renderer.cpp" "src/Window.cpp" "src/Geometry/Line.cpp")
+add_executable (WSR "WSR.cpp" "WSR.hpp" "src/Renderer.cpp" "src/Window.cpp")
 
 target_compile_options(WSR PUBLIC "")
 

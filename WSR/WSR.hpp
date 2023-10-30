@@ -7,5 +7,3 @@
 
 #include "src/Renderer.hpp"
 #include "src/Window.hpp"
-
-#include "src/Geometry/Line.hpp"

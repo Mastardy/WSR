@@ -12,7 +12,7 @@ Window::Window(int width, int height)
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create GLFW Window and Make it Current OpenGL Context
-	window = glfwCreateWindow(960, 540, "WSR", nullptr, nullptr);
+	window = glfwCreateWindow(width, height, "WSR", nullptr, nullptr);
 	if (window == nullptr)
 	{
 		std::cerr << "Failed to create GLFW window" << std::endl;

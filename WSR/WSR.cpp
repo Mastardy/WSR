@@ -1,7 +1,9 @@
 ﻿#include "WSR.hpp"
 
-constexpr int Width = 960;
-constexpr int Height = 540;
+constexpr int WindowWidth = 960;
+constexpr int WindowHeight = 540;
+constexpr int Width = 720;
+constexpr int Height = 415;
 
 void FrameBufferSizeCallback(GLFWwindow* window, int width, int height)
 {
@@ -10,13 +12,13 @@ void FrameBufferSizeCallback(GLFWwindow* window, int width, int height)
 
 int main()
 {
-    Window window(Width, Height);
-    Renderer softwareRenderer(720, 415);
+    Window window(WindowWidth, WindowHeight);
+    Renderer softwareRenderer(Width, Height);
 
     window.SetFramebufferSizeCallback(FrameBufferSizeCallback);
-       
-    Line line(Point(5, 5), Point(200, 200), Color(0, 0, 0, 0));
-    line.Render(softwareRenderer);
+
+    softwareRenderer.SetColor({255, 0, 0, 0});
+    softwareRenderer.DrawTriangle(Point(Width/2, Height/3), Point(Width/4, Height*2/3), Point(Width*3/4, Height*2/3));
 
 	while (!window.ShouldClose())
 	{
