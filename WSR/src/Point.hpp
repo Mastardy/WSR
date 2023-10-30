@@ -14,5 +14,20 @@ struct Point
 		this->y = y;
 	}
 
+	Point operator+(const Point& other)
+	{
+		return Point(x + other.x, y + other.y);
+	}
+
+	Point operator-(const Point& other)
+	{
+		return Point(x - other.x, y - other.y);
+	}
+
+	Point operator*(float scalar)
+	{
+		return Point(x * scalar, y * scalar);
+	}
+
 	int x, y;
 };

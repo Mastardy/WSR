@@ -2,8 +2,8 @@
 
 constexpr int WindowWidth = 960;
 constexpr int WindowHeight = 540;
-constexpr int Width = 720;
-constexpr int Height = 415;
+constexpr int Width = 960;
+constexpr int Height = 540;
 
 void FrameBufferSizeCallback(GLFWwindow* window, int width, int height)
 {
@@ -17,8 +17,13 @@ int main()
 
     window.SetFramebufferSizeCallback(FrameBufferSizeCallback);
 
-    softwareRenderer.SetColor({255, 0, 0, 0});
-    softwareRenderer.DrawTriangle(Point(Width/2, Height/3), Point(Width/4, Height*2/3), Point(Width*3/4, Height*2/3));
+    softwareRenderer.SetColor(Color(255, 0, 0, 0));
+    softwareRenderer.DrawTriangle(Point(10, 70), Point(50, 160), Point(70, 80));
+    softwareRenderer.SetColor({255, 255, 255, 0});
+    softwareRenderer.DrawTriangle({ 180, 50 }, { 150, 1 }, { 70, 180 });
+    softwareRenderer.SetColor({ 0, 255, 0, 0 });
+    softwareRenderer.DrawTriangle({ 180, 150 }, { 120, 160 }, { 130, 180 });
+
 
 	while (!window.ShouldClose())
 	{
@@ -29,7 +34,7 @@ int main()
         window.Update();
 		
         std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
-        //std::cout << "Delta Time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << std::endl;
+        std::cout << "Delta Time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin).count() << std::endl;
 	}
 
 	return 0;
